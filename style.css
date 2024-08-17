@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
 html {
   font-size: 62.5%;
+  color: white;
+  font-family: "Salsa", cursive, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 *,
 *::before,
@@ -10,37 +13,38 @@ html {
   padding: 0;
 }
 body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,108,1) 39%, rgba(0,212,255,1) 100%);
   margin: 0;
 }
+h1 {
+  font-size: clamp(2rem, 10rem, 8vw);
+  margin-bottom: min(7rem, 20vh);
+}
+.finish-date {
+  margin-bottom: min(2rem, 6vh);
+}
 .container {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  margin: 10rem;
 }
-.container > h1 {
+a {
+  color: rgb(224, 224, 224);
+  text-decoration: none;
+}
+.email-container{
+  position: relative;
+  display: inline;
+}
+.tab-finger {
   position: absolute;
-  top: 20%;
-  font-size: 5rem;
-}
-.container input {
   font-size: 2rem;
-  padding: 1em;
-}
-.container #resultP {
-  height: 5rem;
-  font-size: 3rem;
-  padding: 1em;
-}
-.container input {
-  font-size: 2rem;
-  padding: 1em;
-}
-
-.power {
-  position: relative;
-  font-size: 0.5em;
-  top: -1em;
+  color: white;
+  left: 50%;
+  top: 60%;
+  width: 2em;
 }
