@@ -2,7 +2,7 @@ const specialKeys = ["Enter", "Backspace", "Delete", "ArrowLeft", "ArrowRight", 
 const numberRegex = /^\-?\d*(?:\.\d)?$/;
 const input = document.querySelector("#isPrimeInput");
 const resultP = document.querySelector("#resultP");
-
+// const debugParagraph = document.querySelector("#debugParagraph");
 
 const isPrime = (num) => {
   if (num == "") {
@@ -59,7 +59,7 @@ const isPrime = (num) => {
 
 input.addEventListener("keydown", e => {
   const curKey = e.key;
-  resultP.innerHTML = curKey;
+  // debugParagraph.innerHTML = curKey;
   if (curKey === "Enter") {
     console.time("calc");
 
