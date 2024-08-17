@@ -1,0 +1,46 @@
+html {
+  font-size: 62.5%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+}
+.container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container > h1 {
+  position: absolute;
+  top: 20%;
+  font-size: 5rem;
+}
+.container input {
+  font-size: 2rem;
+  padding: 1em;
+}
+.container #resultP {
+  height: 5rem;
+  font-size: 3rem;
+  padding: 1em;
+}
+.container input {
+  font-size: 2rem;
+  padding: 1em;
+}
+
+.power {
+  position: relative;
+  font-size: 0.5em;
+  top: -1em;
+}
