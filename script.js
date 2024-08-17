@@ -59,6 +59,7 @@ const isPrime = (num) => {
 
 input.addEventListener("keydown", e => {
   const curKey = e.key;
+  resultP.innerHTML = curKey;
   if (curKey === "Enter") {
     console.time("calc");
 
