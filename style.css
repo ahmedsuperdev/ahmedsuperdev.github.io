@@ -8,10 +8,14 @@ html {
 *::before,
 *::after {
   box-sizing: border-box;
-  font-size: 1.6rem;
+  font-size: clamp(1.6rem, 1vw + 1rem, 3rem);
   margin: 0;
   padding: 0;
 }
+.container {
+  margin: max(2rem, 6vw);
+}
+
 body {
   min-height: 100vh;
   display: flex;
@@ -22,19 +26,28 @@ body {
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,108,1) 39%, rgba(0,212,255,1) 100%);
   margin: 0;
 }
+@media screen and (max-width: 480px) {
+  body {
+    min-height: 60vh;
+  }
+}
 h1 {
-  font-size: clamp(2rem, 10rem, 8vw);
-  margin-bottom: min(7rem, 20vh);
+  font-size: clamp(4.1rem, 5vw + 3rem, 10rem);
+  width: min(13ch, 100%);
+  margin-bottom: max(3rem, 5vh);
 }
 .finish-date {
   margin-bottom: min(2rem, 6vh);
-}
-.container {
-  margin: 10rem;
+  span {
+    border-bottom: 0.1em dashed rgba(188, 0, 0, 100%);
+  }
 }
 a {
-  color: rgb(224, 224, 224);
+  color: rgb(239, 239, 239);
+  /* text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff; */
+  text-shadow: 0.5px 0.5px 1px black;
   text-decoration: none;
+  border-bottom: 0.1em solid rgb(255, 255, 255);
 }
 .email-container{
   position: relative;
@@ -42,9 +55,10 @@ a {
 }
 .tab-finger {
   position: absolute;
-  font-size: 2rem;
-  color: white;
+  cursor: pointer;
+  color: white; /* still for the import svg */
   left: 50%;
+  transform: translateX(-50%);
   top: 60%;
   width: 2em;
 }
