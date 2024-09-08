@@ -1,64 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
-html {
-  font-size: 62.5%;
-  color: white;
-  font-family: "Salsa", cursive, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  font-size: clamp(1.6rem, 1vw + 1rem, 3rem);
   margin: 0;
   padding: 0;
 }
-.container {
-  margin: max(2rem, 6vw);
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #202122;
+  color: white;
+  /* overflow: hidden; */ /* use it in the real animation to make resizing smoother */
 }
 
-body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,108,1) 39%, rgba(0,212,255,1) 100%);
-  margin: 0;
+canvas {
+  box-sizing: border-box;
+  display: block;
+  /* border: 1px solid black; */
+  box-shadow: 0 0 0 3px black inset;
+  /* height: 300px; */
+  /* width: 100vw; */
 }
-@media screen and (max-width: 480px) {
-  body {
-    min-height: 60vh;
-  }
+.mouse-position {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
-h1 {
-  font-size: clamp(4.1rem, 5vw + 3rem, 10rem);
-  width: min(13ch, 100%);
-  margin-bottom: max(3rem, 5vh);
+
+.glass {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(10px);
+  /* border-radius: 20px; */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
 }
-.finish-date {
-  margin-bottom: min(2rem, 6vh);
-  span {
-    border-bottom: 0.1em dashed rgba(188, 0, 0, 100%);
-  }
-}
-a {
-  color: rgb(239, 239, 239);
-  /* text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff; */
-  text-shadow: 0.5px 0.5px 1px black;
-  text-decoration: none;
-  border-bottom: 0.1em solid rgb(255, 255, 255);
-}
-.email-container{
-  position: relative;
-  display: inline;
-}
-.tab-finger {
-  position: absolute;
-  cursor: pointer;
-  color: white; /* still for the import svg */
+
+.text {
+  /* font-family: Arial, Helvetica, sans-serifs; */
+  position: fixed;
+  font-size: 20rem;
   left: 50%;
-  transform: translateX(-50%);
-  top: 60%;
-  width: 2em;
+  top: 50%;
+  text-shadow: -1px 1px 10px black;
+  color: whitesmoke;
+  transform: translateX(-50%) translateY(-50%);
 }
