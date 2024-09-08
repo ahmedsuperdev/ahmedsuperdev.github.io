@@ -1,4 +1,4 @@
-// TODO: now when I release the hover 
+// TODO: make a body get comuted style or html to get the width instead of using innerwidth &inner height
 const canvas = document.createElement("canvas");
 const mousePostion = document.querySelector(".mouse-position");
 canvas.addEventListener("focus", updateMouse);
@@ -248,7 +248,7 @@ function resizeCanvas() {
   console.log(window.innerWidth, window.innerHeight); // the responsive mode is dump for some reason ??
   console.log(window.devicePixelRatio);
   
-  const sizeFraction = (innerWidth * innerHeight * (window.devicePixelRatio ** 2)) / 1795200;
+  const sizeFraction = (innerWidth * innerHeight) / 1795200;
   console.log(sizeFraction);
   
   ballCount = Math.ceil(orignalBallCount * sizeFraction);
