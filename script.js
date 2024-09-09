@@ -3,10 +3,6 @@ const canvas = document.createElement("canvas");
 const mousePostion = document.querySelector(".mouse-position");
 canvas.addEventListener("focus", updateMouse);
 let couuuunt = 0;
-canvas.addEventListener("resize", e => {
-  console.log("banana");
-  
-})
 let wWidth, wHeight, cWidth, cHeight;
 const orignalBallCount = 1000;
 let ballCount = orignalBallCount;
@@ -16,8 +12,6 @@ resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 // setTimeout(() => {
   document.body.appendChild(canvas);
-  document.body.focus()
-  canvas.focus()
 // }, 5000); // the lag is by live preview script excution
 
 const c = canvas.getContext("2d");
@@ -92,7 +86,7 @@ for (let i = 0; i < ballCount; i++) {
   createBall();
 }
 function createBall() {
-  // ballsDOM(1)
+  ballsDOM(1)
   let radius = Math.random() * 10 + 7;
   // const xID = Math.random();
   // const yID = Math.random();
@@ -113,7 +107,7 @@ function ballUpdate() {
     if (num > 0) {
       createBall()
     } else {
-      // ballsDOM(-1)
+      ballsDOM(-1)
       ballArray.splice(Math.floor(Math.random() * ballArray), 1);
     }
   }
@@ -230,15 +224,22 @@ console.log(ballArray);
 
 
 
-// function ballsDOM(num){
-//   couuuunt += num;
-//   mousePostion.innerHTML = `${couuuunt}`;
-// }
+function ballsDOM(num){
+  couuuunt += num;
+}
 
 
-// document.addEventListener("mousemove", e => {
-//   mousePostion.innerHTML = `My Mouse Position: ${e.clientX} ${e.clientY}`;
-// })
+let e;
+document.addEventListener("mousemove", event => {
+  e = event;
+  updateMouseDom();
+});
+setInterval(() => {
+  updateMouseDom();
+}, 2000);
+function updateMouseDom() {
+  mousePostion.innerHTML = `mousePos: ${e ? e.clientX : ""} ${e ? e.clientX : ""}, balls: ${couuuunt}, DPR: ${window.devicePixelRatio}, ww: ${innerWidth}, wh: ${innerHeight}`;
+}
 function resizeCanvas() {
   // console.log("resized");
   canvas.width = innerWidth;
