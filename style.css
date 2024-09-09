@@ -9,41 +9,22 @@ body {
   width: 100vw;
   background-color: #202122;
   color: white;
-  /* overflow: hidden; */ /* use it in the real animation to make resizing smoother */
 }
 
 canvas {
-  box-sizing: border-box;
   display: block;
-  /* border: 1px solid black; */
-  box-shadow: 0 0 0 3px black inset;
-  /* height: 300px; */
-  /* width: 100vw; */
+  width: 100vw;
+  height: 100vh;
 }
 .mouse-position {
   position: fixed;
+  font-size: calc(clamp(1.6rem, 1.4588rem + 0.36vw, 2.4rem) * 0.6);
   top: 0;
-  left: 0;
+  left: 2vw;
 }
 
-.glass {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0)
-  );
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(10px);
-  /* border-radius: 20px; */
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-}
 
 .text {
-  /* font-family: Arial, Helvetica, sans-serifs; */
   position: fixed;
   font-size: 20rem;
   left: 50%;
